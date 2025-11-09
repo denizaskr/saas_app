@@ -2,6 +2,7 @@
 
 import {auth} from "@clerk/nextjs/server"
 import { createSupabaseClient } from "../supabase"
+import { create } from "domain";
 
 export const createCompanion = async (formData: CreateCompanion) =>{
 
@@ -40,4 +41,16 @@ export const getAllCompanions = async ({ limit = 10, page = 1, subject, topic }:
     if(error) throw new Error(error.message);
 
     return companions;
+}
+
+export const getCompanion  = async (id: string) =>{
+    const supabase =createSupabaseClient();
+
+    const {data,error} = await supabase
+    .from('companions')
+    .select()
+    .eq('id',id)
+
+    if(error) return console.log(error)
+    return data[0]
 }
