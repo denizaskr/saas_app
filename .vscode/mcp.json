@@ -1,0 +1,8 @@
+{
+  "servers": {
+    "Sentry": {
+      "url": "https://mcp.sentry.dev/mcp/deniz-askar/javascript-nextjs",
+      "type": "http"
+    }
+  }
+}
