@@ -10,7 +10,7 @@ import {
   getUserCompanions,
   getUserSessions,
   getBookmarkedCompanions,
-} from "@/lib/actions/companion.actions";
+} from "@/lib/actions/companion.action";
 import Image from "next/image";
 import CompanionsList from "@/components/CompanionsList";
 
